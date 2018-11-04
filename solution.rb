@@ -1,19 +1,19 @@
 require 'sinatra'
 # require 'rubygems'
-require "browser"
-require "device_detector"
+# require "browser"
+# require "device_detector"
 
 
-get '/' do
-	
+get '/' do	
 	#gem browser:
 	# browser = Browser.new(request.env['HTTP_USER_AGENT'], accept_language: "en-us")
 	# # "#{browser.name}"
 	# @browser_name=browser.name
 
 	#gem device_detector
-	client = DeviceDetector.new(request.env['HTTP_USER_AGENT'])
-	@browser_name=client.name # => 'Chrome'
+	#client = DeviceDetector.new(request.env['HTTP_USER_AGENT'])
+	#@browser_name=client.name
+	@header= request.env['HTTP_USER_AGENT']
 	erb :index
 
 end
